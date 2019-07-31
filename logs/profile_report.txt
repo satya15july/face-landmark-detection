@@ -1,0 +1,314 @@
+('profiling', True)
+Start Detecting
+Use PNet model: /home/visteon/work/internal-work/face-detection/mtcnn-codebase/mtcnn_tensorflow/tmp/model/pnet/pnet-30
+('FcnDetector path : ', '/home/visteon/work/internal-work/face-detection/mtcnn-codebase/mtcnn_tensorflow/tmp/model/pnet/pnet-30')
+WARNING:tensorflow:From /home/visteon/virtual-python-env/py2/face-identification/local/lib/python2.7/site-packages/tensorflow/python/framework/op_def_library.py:263: colocate_with (from tensorflow.python.framework.ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Colocations handled automatically by placer.
+2019-09-05 16:54:12.063229: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 FMA
+2019-09-05 16:54:12.179061: I tensorflow/compiler/xla/service/service.cc:150] XLA service 0x58a4450 executing computations on platform CUDA. Devices:
+2019-09-05 16:54:12.179115: I tensorflow/compiler/xla/service/service.cc:158]   StreamExecutor device (0): GeForce GTX 1080 Ti, Compute Capability 6.1
+2019-09-05 16:54:12.199034: I tensorflow/core/platform/profile_utils/cpu_utils.cc:94] CPU Frequency: 3792320000 Hz
+2019-09-05 16:54:12.200142: I tensorflow/compiler/xla/service/service.cc:150] XLA service 0x59101a0 executing computations on platform Host. Devices:
+2019-09-05 16:54:12.200175: I tensorflow/compiler/xla/service/service.cc:158]   StreamExecutor device (0): <undefined>, <undefined>
+2019-09-05 16:54:12.200628: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1433] Found device 0 with properties: 
+name: GeForce GTX 1080 Ti major: 6 minor: 1 memoryClockRate(GHz): 1.582
+pciBusID: 0000:08:00.0
+totalMemory: 10.92GiB freeMemory: 10.76GiB
+2019-09-05 16:54:12.200658: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1512] Adding visible gpu devices: 0
+2019-09-05 16:54:12.201752: I tensorflow/core/common_runtime/gpu/gpu_device.cc:984] Device interconnect StreamExecutor with strength 1 edge matrix:
+2019-09-05 16:54:12.201772: I tensorflow/core/common_runtime/gpu/gpu_device.cc:990]      0 
+2019-09-05 16:54:12.201781: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1003] 0:   N 
+2019-09-05 16:54:12.202103: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 10468 MB memory) -> physical GPU (device: 0, name: GeForce GTX 1080 Ti, pci bus id: 0000:08:00.0, compute capability: 6.1)
+('Restore param from: ', '/home/visteon/work/internal-work/face-detection/mtcnn-codebase/mtcnn_tensorflow/tmp/model/pnet/pnet-30')
+WARNING:tensorflow:From /home/visteon/virtual-python-env/py2/face-identification/local/lib/python2.7/site-packages/tensorflow/python/training/saver.py:1266: checkpoint_exists (from tensorflow.python.training.checkpoint_management) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use standard file APIs to check for files with this prefix.
+WARNING:tensorflow:From /home/visteon/virtual-python-env/py2/face-identification/local/lib/python2.7/site-packages/tensorflow/python/profiler/internal/flops_registry.py:142: tensor_shape_from_node_def_name (from tensorflow.python.framework.graph_util_impl) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.compat.v1.graph_util.remove_training_nodes
+26 ops no flops stats due to incomplete shapes.
+Parsing Inputs...
+
+=========================Options=============================
+-max_depth                  10000
+-min_bytes                  0
+-min_peak_bytes             0
+-min_residual_bytes         0
+-min_output_bytes           0
+-min_micros                 0
+-min_accelerator_micros     0
+-min_cpu_micros             0
+-min_params                 0
+-min_float_ops              1
+-min_occurrence             0
+-step                       -1
+-order_by                   float_ops
+-account_type_regexes       .*
+-start_name_regexes         .*
+-trim_name_regexes          
+-show_name_regexes          .*
+-hide_name_regexes          
+-account_displayed_op_only  true
+-select                     float_ops
+-output                     stdout:
+
+==================Model Analysis Report======================
+
+Doc:
+scope: The nodes in the model graph are organized by their names, which is hierarchical like filesystem.
+flops: Number of float operations. Note: Please read the implementation for the math behind it.
+
+Profile:
+node name | # float_ops
+_TFProfRoot (--/34.16k flops)
+  conv3/kernel/Regularizer/l2_regularizer (1/13.82k flops)
+    conv3/kernel/Regularizer/l2_regularizer/L2Loss (13.82k/13.82k flops)
+  conv3/weights/Initializer/random_uniform (4.61k/9.22k flops)
+    conv3/weights/Initializer/random_uniform/mul (4.61k/4.61k flops)
+    conv3/weights/Initializer/random_uniform/sub (1/1 flops)
+  conv2/kernel/Regularizer/l2_regularizer (1/4.32k flops)
+    conv2/kernel/Regularizer/l2_regularizer/L2Loss (4.32k/4.32k flops)
+  conv2/weights/Initializer/random_uniform (1.44k/2.88k flops)
+    conv2/weights/Initializer/random_uniform/mul (1.44k/1.44k flops)
+    conv2/weights/Initializer/random_uniform/sub (1/1 flops)
+  conv4_3/kernel/Regularizer/l2_regularizer (1/960 flops)
+    conv4_3/kernel/Regularizer/l2_regularizer/L2Loss (959/959 flops)
+  conv1/kernel/Regularizer/l2_regularizer (1/810 flops)
+    conv1/kernel/Regularizer/l2_regularizer/L2Loss (809/809 flops)
+  conv4_3/weights/Initializer/random_uniform (320/641 flops)
+    conv4_3/weights/Initializer/random_uniform/mul (320/320 flops)
+    conv4_3/weights/Initializer/random_uniform/sub (1/1 flops)
+  conv1/weights/Initializer/random_uniform (270/541 flops)
+    conv1/weights/Initializer/random_uniform/mul (270/270 flops)
+    conv1/weights/Initializer/random_uniform/sub (1/1 flops)
+  conv4_2/kernel/Regularizer/l2_regularizer (1/384 flops)
+    conv4_2/kernel/Regularizer/l2_regularizer/L2Loss (383/383 flops)
+  conv4_2/weights/Initializer/random_uniform (128/257 flops)
+    conv4_2/weights/Initializer/random_uniform/mul (128/128 flops)
+    conv4_2/weights/Initializer/random_uniform/sub (1/1 flops)
+  conv4_1/kernel/Regularizer/l2_regularizer (1/192 flops)
+    conv4_1/kernel/Regularizer/l2_regularizer/L2Loss (191/191 flops)
+  conv4_1/weights/Initializer/random_uniform (64/129 flops)
+    conv4_1/weights/Initializer/random_uniform/mul (64/64 flops)
+    conv4_1/weights/Initializer/random_uniform/sub (1/1 flops)
+
+======================End of Report==========================
+('FcnDetector FLOPs :', 34156L)
+Use RNet model: /home/visteon/work/internal-work/face-detection/mtcnn-codebase/mtcnn_tensorflow/tmp/model/rnet/rnet-30
+WARNING:tensorflow:From /home/visteon/virtual-python-env/py2/face-identification/local/lib/python2.7/site-packages/tensorflow/contrib/layers/python/layers/layers.py:1624: flatten (from tensorflow.python.layers.core) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use keras.layers.flatten instead.
+2019-09-05 16:54:12.580927: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1512] Adding visible gpu devices: 0
+2019-09-05 16:54:12.580974: I tensorflow/core/common_runtime/gpu/gpu_device.cc:984] Device interconnect StreamExecutor with strength 1 edge matrix:
+2019-09-05 16:54:12.580981: I tensorflow/core/common_runtime/gpu/gpu_device.cc:990]      0 
+2019-09-05 16:54:12.580985: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1003] 0:   N 
+2019-09-05 16:54:12.581182: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 10468 MB memory) -> physical GPU (device: 0, name: GeForce GTX 1080 Ti, pci bus id: 0000:08:00.0, compute capability: 6.1)
+('Restore param from: ', '/home/visteon/work/internal-work/face-detection/mtcnn-codebase/mtcnn_tensorflow/tmp/model/rnet/rnet-30')
+Parsing Inputs...
+
+=========================Options=============================
+-max_depth                  10000
+-min_bytes                  0
+-min_peak_bytes             0
+-min_residual_bytes         0
+-min_output_bytes           0
+-min_micros                 0
+-min_accelerator_micros     0
+-min_cpu_micros             0
+-min_params                 0
+-min_float_ops              1
+-min_occurrence             0
+-step                       -1
+-order_by                   float_ops
+-account_type_regexes       .*
+-start_name_regexes         .*
+-trim_name_regexes          
+-show_name_regexes          .*
+-hide_name_regexes          
+-account_displayed_op_only  true
+-select                     float_ops
+-output                     stdout:
+
+==================Model Analysis Report======================
+
+Doc:
+scope: The nodes in the model graph are organized by their names, which is hierarchical like filesystem.
+flops: Number of float operations. Note: Please read the implementation for the math behind it.
+
+Profile:
+node name | # float_ops
+_TFProfRoot (--/3.45m flops)
+  conv2/Conv2D (1.96m/1.96m flops)
+  conv1/Conv2D (731.81k/731.81k flops)
+  conv3/Conv2D (221.18k/221.18k flops)
+  fc1/weights/Initializer/random_uniform (73.73k/147.46k flops)
+    fc1/weights/Initializer/random_uniform/mul (73.73k/73.73k flops)
+    fc1/weights/Initializer/random_uniform/sub (1/1 flops)
+  fc1/MatMul (147.46k/147.46k flops)
+  conv3/kernel/Regularizer/l2_regularizer (1/36.86k flops)
+    conv3/kernel/Regularizer/l2_regularizer/L2Loss (36.86k/36.86k flops)
+  conv2/kernel/Regularizer/l2_regularizer (1/36.29k flops)
+    conv2/kernel/Regularizer/l2_regularizer/L2Loss (36.29k/36.29k flops)
+  conv3/weights/Initializer/random_uniform (12.29k/24.58k flops)
+    conv3/weights/Initializer/random_uniform/mul (12.29k/12.29k flops)
+    conv3/weights/Initializer/random_uniform/sub (1/1 flops)
+  conv2/weights/Initializer/random_uniform (12.10k/24.19k flops)
+    conv2/weights/Initializer/random_uniform/mul (12.10k/12.10k flops)
+    conv2/weights/Initializer/random_uniform/sub (1/1 flops)
+  conv1/add (13.55k/13.55k flops)
+  conv1/sub (13.55k/13.55k flops)
+  conv1/mul_1 (13.55k/13.55k flops)
+  conv1/mul (13.55k/13.55k flops)
+  conv1/BiasAdd (13.55k/13.55k flops)
+  pool1/MaxPool (13.55k/13.55k flops)
+  pool2/MaxPool (6.91k/6.91k flops)
+  conv2/mul (3.89k/3.89k flops)
+  conv2/sub (3.89k/3.89k flops)
+  conv2/mul_1 (3.89k/3.89k flops)
+  conv2/add (3.89k/3.89k flops)
+  conv2/BiasAdd (3.89k/3.89k flops)
+  landmark_fc/weights/Initializer/random_uniform (1.28k/2.56k flops)
+    landmark_fc/weights/Initializer/random_uniform/mul (1.28k/1.28k flops)
+    landmark_fc/weights/Initializer/random_uniform/sub (1/1 flops)
+  landmark_fc/MatMul (2.56k/2.56k flops)
+  conv1/kernel/Regularizer/l2_regularizer (1/2.27k flops)
+    conv1/kernel/Regularizer/l2_regularizer/L2Loss (2.27k/2.27k flops)
+  conv1/weights/Initializer/random_uniform (756/1.51k flops)
+    conv1/weights/Initializer/random_uniform/mul (756/756 flops)
+    conv1/weights/Initializer/random_uniform/sub (1/1 flops)
+  bbox_fc/weights/Initializer/random_uniform (512/1.02k flops)
+    bbox_fc/weights/Initializer/random_uniform/mul (512/512 flops)
+    bbox_fc/weights/Initializer/random_uniform/sub (1/1 flops)
+  bbox_fc/MatMul (1.02k/1.02k flops)
+  conv3/mul (576/576 flops)
+  conv3/mul_1 (576/576 flops)
+  conv3/sub (576/576 flops)
+  conv3/add (576/576 flops)
+  conv3/BiasAdd (576/576 flops)
+  cls_fc/weights/Initializer/random_uniform (256/513 flops)
+    cls_fc/weights/Initializer/random_uniform/mul (256/256 flops)
+    cls_fc/weights/Initializer/random_uniform/sub (1/1 flops)
+  cls_fc/MatMul (512/512 flops)
+  fc1/BiasAdd (128/128 flops)
+  cls_fc/Softmax (10/10 flops)
+  landmark_fc/BiasAdd (10/10 flops)
+  bbox_fc/BiasAdd (4/4 flops)
+  cls_fc/BiasAdd (2/2 flops)
+
+======================End of Report==========================
+('Detector FLOPs : ', 3452053L)
+Use ONet model: /home/visteon/work/internal-work/face-detection/mtcnn-codebase/mtcnn_tensorflow/tmp/model/onet/onet-30
+2019-09-05 16:54:12.725257: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1512] Adding visible gpu devices: 0
+2019-09-05 16:54:12.725303: I tensorflow/core/common_runtime/gpu/gpu_device.cc:984] Device interconnect StreamExecutor with strength 1 edge matrix:
+2019-09-05 16:54:12.725309: I tensorflow/core/common_runtime/gpu/gpu_device.cc:990]      0 
+2019-09-05 16:54:12.725313: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1003] 0:   N 
+2019-09-05 16:54:12.725489: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 10468 MB memory) -> physical GPU (device: 0, name: GeForce GTX 1080 Ti, pci bus id: 0000:08:00.0, compute capability: 6.1)
+('Restore param from: ', '/home/visteon/work/internal-work/face-detection/mtcnn-codebase/mtcnn_tensorflow/tmp/model/onet/onet-30')
+Parsing Inputs...
+
+=========================Options=============================
+-max_depth                  10000
+-min_bytes                  0
+-min_peak_bytes             0
+-min_residual_bytes         0
+-min_output_bytes           0
+-min_micros                 0
+-min_accelerator_micros     0
+-min_cpu_micros             0
+-min_params                 0
+-min_float_ops              1
+-min_occurrence             0
+-step                       -1
+-order_by                   float_ops
+-account_type_regexes       .*
+-start_name_regexes         .*
+-trim_name_regexes          
+-show_name_regexes          .*
+-hide_name_regexes          
+-account_displayed_op_only  true
+-select                     float_ops
+-output                     stdout:
+
+==================Model Analysis Report======================
+
+Doc:
+scope: The nodes in the model graph are organized by their names, which is hierarchical like filesystem.
+flops: Number of float operations. Note: Please read the implementation for the math behind it.
+
+Profile:
+node name | # float_ops
+_TFProfRoot (--/27.47m flops)
+  conv2/Conv2D (16.26m/16.26m flops)
+  conv3/Conv2D (4.72m/4.72m flops)
+  conv1/Conv2D (3.66m/3.66m flops)
+  fc1/weights/Initializer/random_uniform (294.91k/589.83k flops)
+    fc1/weights/Initializer/random_uniform/mul (294.91k/294.91k flops)
+    fc1/weights/Initializer/random_uniform/sub (1/1 flops)
+  conv4/Conv2D (589.82k/589.82k flops)
+  fc1/MatMul (589.82k/589.82k flops)
+  conv3/kernel/Regularizer/l2_regularizer (1/110.59k flops)
+    conv3/kernel/Regularizer/l2_regularizer/L2Loss (110.59k/110.59k flops)
+  conv4/kernel/Regularizer/l2_regularizer (1/98.30k flops)
+    conv4/kernel/Regularizer/l2_regularizer/L2Loss (98.30k/98.30k flops)
+  conv3/weights/Initializer/random_uniform (36.86k/73.73k flops)
+    conv3/weights/Initializer/random_uniform/mul (36.86k/36.86k flops)
+    conv3/weights/Initializer/random_uniform/sub (1/1 flops)
+  conv1/add (67.71k/67.71k flops)
+  conv1/mul (67.71k/67.71k flops)
+  conv1/mul_1 (67.71k/67.71k flops)
+  conv1/sub (67.71k/67.71k flops)
+  conv1/BiasAdd (67.71k/67.71k flops)
+  pool1/MaxPool (67.71k/67.71k flops)
+  conv4/weights/Initializer/random_uniform (32.77k/65.54k flops)
+    conv4/weights/Initializer/random_uniform/mul (32.77k/32.77k flops)
+    conv4/weights/Initializer/random_uniform/sub (1/1 flops)
+  conv2/kernel/Regularizer/l2_regularizer (1/55.30k flops)
+    conv2/kernel/Regularizer/l2_regularizer/L2Loss (55.30k/55.30k flops)
+  conv2/weights/Initializer/random_uniform (18.43k/36.87k flops)
+    conv2/weights/Initializer/random_uniform/mul (18.43k/18.43k flops)
+    conv2/weights/Initializer/random_uniform/sub (1/1 flops)
+  conv2/BiasAdd (28.22k/28.22k flops)
+  conv2/sub (28.22k/28.22k flops)
+  conv2/mul_1 (28.22k/28.22k flops)
+  conv2/mul (28.22k/28.22k flops)
+  conv2/add (28.22k/28.22k flops)
+  pool2/MaxPool (25.60k/25.60k flops)
+  landmark_fc/weights/Initializer/random_uniform (2.56k/5.12k flops)
+    landmark_fc/weights/Initializer/random_uniform/mul (2.56k/2.56k flops)
+    landmark_fc/weights/Initializer/random_uniform/sub (1/1 flops)
+  landmark_fc/MatMul (5.12k/5.12k flops)
+  pool3/MaxPool (4.10k/4.10k flops)
+  conv3/sub (4.10k/4.10k flops)
+  conv3/mul (4.10k/4.10k flops)
+  conv3/add (4.10k/4.10k flops)
+  conv3/mul_1 (4.10k/4.10k flops)
+  conv3/BiasAdd (4.10k/4.10k flops)
+  conv1/kernel/Regularizer/l2_regularizer (1/2.59k flops)
+    conv1/kernel/Regularizer/l2_regularizer/L2Loss (2.59k/2.59k flops)
+  bbox_fc/weights/Initializer/random_uniform (1.02k/2.05k flops)
+    bbox_fc/weights/Initializer/random_uniform/mul (1.02k/1.02k flops)
+    bbox_fc/weights/Initializer/random_uniform/sub (1/1 flops)
+  bbox_fc/MatMul (2.05k/2.05k flops)
+  conv1/weights/Initializer/random_uniform (864/1.73k flops)
+    conv1/weights/Initializer/random_uniform/mul (864/864 flops)
+    conv1/weights/Initializer/random_uniform/sub (1/1 flops)
+  conv4/add (1.15k/1.15k flops)
+  conv4/mul (1.15k/1.15k flops)
+  conv4/mul_1 (1.15k/1.15k flops)
+  conv4/sub (1.15k/1.15k flops)
+  conv4/BiasAdd (1.15k/1.15k flops)
+  cls_fc/weights/Initializer/random_uniform (512/1.02k flops)
+    cls_fc/weights/Initializer/random_uniform/mul (512/512 flops)
+    cls_fc/weights/Initializer/random_uniform/sub (1/1 flops)
+  cls_fc/MatMul (1.02k/1.02k flops)
+  fc1/BiasAdd (256/256 flops)
+  cls_fc/Softmax (10/10 flops)
+  landmark_fc/BiasAdd (10/10 flops)
+  bbox_fc/BiasAdd (4/4 flops)
+  cls_fc/BiasAdd (2/2 flops)
+
+======================End of Report==========================
+('Detector FLOPs : ', 27466178L)
+(480, 640)
+
